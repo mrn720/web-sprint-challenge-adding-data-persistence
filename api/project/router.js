@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        const newProject = await Projects.addProject(req.body)
+        const newProject = await Projects.create(req.body)
         res.status(201).json({
             project_id: newProject.project_id,
             project_name: newProject.project_name,

@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        const newTask = await Tasks.addTask(req.body)
+        const newTask = await Tasks.create(req.body)
         res.status(201).json({
             task_id: newTask.task_id,
             task_description: newTask.task_description,

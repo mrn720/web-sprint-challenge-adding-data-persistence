@@ -20,7 +20,7 @@ const getAll = async () => {
     return results
 }
 
-const addTask = async (task) => {
+const create = async (task) => {
     const [id] = await db('tasks').insert(task)
     return db('tasks as t')
         .join(
@@ -35,5 +35,5 @@ const addTask = async (task) => {
 
 module.exports = {
     getAll,
-    addTask
+    create
 }
